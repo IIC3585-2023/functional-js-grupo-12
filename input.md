@@ -5,8 +5,9 @@ Por ejemplo se puede usar en *GitHub* para documentar el código, escribir manua
 ## Parte 2
 Markdown puede ser usado para muchas cosas. Por ejemplo la gente lo utiliza para
 * crear páginas web
-* publicar documentos,
+* publicar documentos
 * escribir notas
 * hacer presentaciones
 * redactar correos
-* generar documentación técnica * escribir libros
+* generar documentación técnica
+* escribir libros

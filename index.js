@@ -29,11 +29,13 @@ const processEmphasis = (dataArray) => {
 
 // main
 
-// const dataArray = readFile('input.md', 'utf-8').split('\n');
+const dataArray = readFile('input.md', 'utf-8').split('\n');
+const newdataArray = processEmphasis(dataArray);
+console.log(newdataArray);
 
-const exampleArray = ["Hello **world**! This is *some* text with ~~words~~", "And this **too**", "And so does *this*", "And ~~this~~"];
-const newexampleArray = processEmphasis(exampleArray);
-console.log(newexampleArray);
+// const exampleArray = ["Hello **world**! This is *some* text with ~~words~~", "And this **too**", "And so does *this*", "And ~~this~~"];
+// const newexampleArray = processEmphasis(exampleArray);
+// console.log(newexampleArray);
 
 
 // Ejemplo compose:
