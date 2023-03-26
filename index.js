@@ -8,6 +8,15 @@ const readFile = (path, encoding) => {
   }
 }
 
+const writeFile = (path, data, encoding) => {
+  // data is a string
+  try {
+    fs.writeFileSync(path, data, {encoding});
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 const cleanData = (dataArray) => {
   return dataArray
   .split('\n')
@@ -37,13 +46,18 @@ const processHeaders = (dataArray) => {
   // Luego busco '*'
 }
 
+const transformData = (dataArray) => {
+  
+}
+
 
 
 // main
 
-const dataArray = readFile('input.md', 'utf-8')
+const dataArray = readFile('input.md', 'utf-8');
 const newdataArray = cleanData(dataArray);
-console.log(processEmphasis(newdataArray));
+const result = processEmphasis(newdataArray)
+writeFile('output.html', result.join('\n'), 'utf-8');
 
 
 // const exampleArray = ["Hello **world**! This is *some* text with ~~words~~", "And this **too**", "And so does *this*", "And ~~this~~"];
