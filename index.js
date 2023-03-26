@@ -6,9 +6,15 @@ const readFile = (path, encoding) => {
   } catch (error) {
     console.log(error);
   }
-};
+}
 
-const replaceCurried = (text) => {
+const cleanData = (dataArray) => {
+  return dataArray
+  .split('\n')
+  .filter(line => line != '')
+}
+
+const replacePattern = (text) => {
   return (pattern) => {
     return (replacement) => {
       return text.replace(pattern, replacement);
@@ -21,17 +27,24 @@ const processEmphasis = (dataArray) => {
   // * * o _ _ -> <em></em>
   // ~~ ~~ -> <s></s>
   return dataArray
-  .map(line => replaceCurried(line)(/\*\*(.*?)\*\*/g)("<strong>$1</strong>"))
-  .map(line => replaceCurried(line)(/\*(.*?)\*/g)("<em>$1</em>"))
-  .map(line => replaceCurried(line)(/\~\~(.*?)\~\~/g)("<s>$1</s>"));
+  .map(line => replacePattern(line)(/\*\*(.*?)\*\*/g)("<strong>$1</strong>"))
+  .map(line => replacePattern(line)(/\*(.*?)\*/g)("<em>$1</em>"))
+  .map(line => replacePattern(line)(/\~\~(.*?)\~\~/g)("<s>$1</s>"));
 }
+
+const processHeaders = (dataArray) => {
+  // primero busco 3#, después 2# y 1#
+  // Luego busco '*'
+}
+
 
 
 // main
 
-const dataArray = readFile('input.md', 'utf-8').split('\n');
-const newdataArray = processEmphasis(dataArray);
-console.log(newdataArray);
+const dataArray = readFile('input.md', 'utf-8')
+const newdataArray = cleanData(dataArray);
+console.log(processEmphasis(newdataArray));
+
 
 // const exampleArray = ["Hello **world**! This is *some* text with ~~words~~", "And this **too**", "And so does *this*", "And ~~this~~"];
 // const newexampleArray = processEmphasis(exampleArray);
