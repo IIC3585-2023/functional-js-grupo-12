@@ -13,4 +13,4 @@ An example of the input and output file is in the ```example``` folder. (```npm 
 
 The html output looks like this:
 
-![html!](example/output.png, "HTML code")
+![html](example/output.png)
