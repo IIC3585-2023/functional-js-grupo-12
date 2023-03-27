@@ -112,5 +112,4 @@ const main = (inputFile, outputFile) => {
   writeFile(outputFile, htmlText, 'utf-8');
 }
 
-// main(process.argv[2], process.argv[3]);
-main('input.md', 'output.html');
+main(process.argv[2], process.argv[3]);
