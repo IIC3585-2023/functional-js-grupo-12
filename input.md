@@ -11,3 +11,10 @@ Markdown puede ser usado para muchas cosas. Por ejemplo la gente lo utiliza para
 * redactar correos
 * generar documentación técnica
 * escribir libros
+
+Este es un ejemplo de una lista numerada:
+1. Primer item.
+2. Segundo item.
+3. Tercer item.
+
+~~Ups esto no debería estar acá~~ 

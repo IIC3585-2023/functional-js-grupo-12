@@ -24,14 +24,6 @@ const cleanData = (dataArray) => {
   .filter(line => line != '');
 }
 
-const replacePattern = (text) => {
-  return (pattern) => {
-    return (replacement) => {
-      return text.replace(pattern, replacement);
-    }
-  }
-}
-
 const processHeaders = (dataArray) => {
   return dataArray.map(line => {
     if (_.startsWith(line, "#")) {
@@ -84,10 +76,15 @@ const processParagraphs = (dataArray) => {
   })
 }
 
+const replacePattern = (text) => {
+  return (pattern) => {
+    return (replacement) => {
+      return text.replace(pattern, replacement);
+    }
+  }
+}
+
 const processEmphasis = (dataArray) => {
-  // ** ** o __ __ -> <strong></strong>
-  // * * o _ _ -> <em></em>
-  // ~~ ~~ -> <s></s>
   return dataArray
   .map(line => replacePattern(line)(/\*\*(.*?)\*\*/g)("<strong>$1</strong>"))
   .map(line => replacePattern(line)(/\*(.*?)\*/g)("<em>$1</em>"))
