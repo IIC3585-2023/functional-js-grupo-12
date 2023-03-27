@@ -68,7 +68,7 @@ const processLists = (dataArray) => {
 const processParagraphs = (dataArray) => {
   return dataArray.map(line => {
     if (!(_.startsWith(line, '<') || _.startsWith(line, '   <'))) {
-      return `<p>${line}</p>`
+      return `<p> ${line} </p>`
     }
     else {
       return line;

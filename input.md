@@ -17,4 +17,4 @@ Este es un ejemplo de una lista numerada:
 2. Segundo item.
 3. Tercer item.
 
-~~Ups esto no debería estar acá~~ 
+~~Ups esto no debería estar acá~~
